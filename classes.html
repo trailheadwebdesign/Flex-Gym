@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes & Training - Flex Gym & Fitness</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content: Classes Section -->
+    <section id="classes">
+        <h1>Our Classes</h1>
+        <p>Join our variety of fitness classes tailored to meet your fitness goals.</p>
+
+        <div class="class-schedule">
+            <h2>Class Schedule</h2>
+            <!-- Placeholder for class schedule -->
+            <p>Monday: Yoga (6:00 AM - 7:00 AM)</p>
+            <p>Tuesday: Pilates (6:30 PM - 7:30 PM)</p>
+            <p>Wednesday: HIIT (5:30 PM - 6:30 PM)</p>
+            <p>Thursday: Spinning (6:00 AM - 7:00 AM)</p>
+            <p>Friday: Zumba (5:00 PM - 6:00 PM)</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts to dynamically load navbar and footer -->
+    <script>
+        // Use fetch API to load the navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+
+                // After loading the navbar, attach event listeners
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                hamburger.addEventListener("click", () => {
+                    hamburger.classList.toggle("active");
+                    navLinks.classList.toggle("active");
+                });
+            });
+
+        // Use fetch API to load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

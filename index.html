@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Gym & Fitness</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <section id="hero">
+        <h1>Transform Your Fitness Journey at Flex Gym & Fitness!</h1>
+        <p>Your go-to gym in Colorado Springs.</p>
+        <a href="membership.html" class="cta">Join Today</a>
+    </section>
+
+    <section id="services">
+        <h2>What We Offer</h2>
+        <div class="service-box">
+            <h3>Group Classes</h3>
+            <p>High-intensity workouts for all levels.</p>
+        </div>
+        <div class="service-box">
+            <h3>Personal Training</h3>
+            <p>Get 1-on-1 guidance from expert trainers.</p>
+        </div>
+    </section>
+
+    <!-- Footer placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Use fetch API to load the navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+
+                // After loading the navbar, attach event listeners
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                hamburger.addEventListener("click", () => {
+                    hamburger.classList.toggle("active");
+                    navLinks.classList.toggle("active");
+                });
+            });
+
+        // Use fetch API to load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
