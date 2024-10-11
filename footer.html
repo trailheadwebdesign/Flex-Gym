@@ -1,10 +1,85 @@
-<footer>
-    <div class="footer-content">
-        <p>&copy; 2024 Flex Gym & Fitness. All rights reserved.</p>
-        <p>1234 Fitness St, Colorado Springs, CO 80918 | Phone: (555) 555-5555</p>
-        <p>Follow us on: 
-            <a href="https://www.instagram.com/explore/locations/88550671/flex-gym-fitness/?hl=en">Instagram</a> | 
-            <a href="https://www.facebook.com/p/Flex-Gym-Fitness-100057494138003/">Facebook</a>
-        </p>
-    </div>
-</footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Gym & Fitness</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #ff0000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #cc0000;
+        }
+
+        /* Flex layout for a neat single-line look */
+        .footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Flex Gym & Fitness. All rights reserved.</p>
+                <p>1234 Hollow Street, Colorado Springs, CO 80918 | Phone: (555) 555-5555</p>
+                <p>
+                    Follow us on:
+                    <a href="https://www.instagram.com/explore/locations/88550671/flex-gym-fitness/?hl=en" target="_blank">Instagram</a> |
+                    <a href="https://www.facebook.com/profile.php?id=100057494138003&sk=photos_by" target="_blank">Facebook</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
