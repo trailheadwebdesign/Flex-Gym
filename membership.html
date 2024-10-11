@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership - Flex Gym & Fitness</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content: Membership Section -->
+    <section id="membership">
+        <h1>Choose Your Membership</h1>
+        <div class="membership-tier">
+            <h2>Monthly Plan</h2>
+            <p>$40/month</p>
+        </div>
+        <div class="membership-tier">
+            <h2>Annual Plan</h2>
+            <p>$400/year</p>
+        </div>
+        <div class="membership-tier">
+            <h2>Family Plan</h2>
+            <p>$70/month for up to 4 family members</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts to dynamically load navbar and footer -->
+    <script>
+        // Use fetch API to load the navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+
+                // After loading the navbar, attach event listeners
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                hamburger.addEventListener("click", () => {
+                    hamburger.classList.toggle("active");
+                    navLinks.classList.toggle("active");
+                });
+            });
+
+        // Use fetch API to load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

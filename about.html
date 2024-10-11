@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Flex Gym & Fitness</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content: About Us Section -->
+    <section id="about">
+        <h1>About Flex Gym & Fitness</h1>
+        <p>Founded in 2020, Flex Gym & Fitness aims to transform lives by helping people meet their fitness goals in a supportive community.</p>
+
+        <h2>Meet the Team</h2>
+        <div class="team-member">
+            <img src="images/trainer1.jpg" alt="Trainer">
+            <p>John Doe - Head Trainer</p>
+        </div>
+        <div class="team-member">
+            <img src="images/trainer2.jpg" alt="Trainer">
+            <p>Jane Smith - Fitness Coach</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts to dynamically load navbar and footer -->
+    <script>
+        // Use fetch API to load the navbar
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+
+                // After loading the navbar, attach event listeners
+                const hamburger = document.querySelector(".hamburger");
+                const navLinks = document.querySelector(".nav-links");
+
+                hamburger.addEventListener("click", () => {
+                    hamburger.classList.toggle("active");
+                    navLinks.classList.toggle("active");
+                });
+            });
+
+        // Use fetch API to load the footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+</html>
